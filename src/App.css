@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+  background-color:#F0F2F5;
+  direction: rtl
+}
+.col-4 {
+  display: inline;
+  margin: 10px;
+}
