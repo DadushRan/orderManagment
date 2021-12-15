@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
-
 
 export default function AddOrder(props) {
 
@@ -24,10 +22,10 @@ export default function AddOrder(props) {
     const [mayonnaise,setMayonnaise] = useState('לא');
 
     const confirmNewOrder = (e) => {
-        if((mealOrRegular == "צ'יפס" || mealOrRegular == 'שתיה') && prodType == ''){
+        if((mealOrRegular === "צ'יפס" || mealOrRegular === 'שתיה') && prodType === ''){
             props.addNewOrder({mealOrRegular, prodType, prodPrice, note, dry, elefHaihimSouce, lettuce, tomato, purpleOnion, pickles, hotPepper, ketchup, mayonnaise,extraCheese, extraPayOnCheese})
         }
-        else if(prodType == '' && (mealOrRegular == 'רגיל' || mealOrRegular == 'ארוחה')){
+        else if(prodType === '' && (mealOrRegular === 'רגיל' || mealOrRegular === 'ארוחה')){
             alert('בחר סוג בורגר')
         }
         else{
@@ -38,7 +36,7 @@ export default function AddOrder(props) {
 
     const valueOfMealOrRegular = (element) =>{
         
-            if(element == 'רגיל'){
+            if(element === 'רגיל'){
                 setProdPrice(30)
                 setMealOrRegular(element)
                 setDry('לא')
@@ -53,26 +51,26 @@ export default function AddOrder(props) {
                 setExtraCheese('לא')
                 setExtraPayOnCheese(0)   
             }
-            if(element == 'רגיל' && prodType == ''){
+            if(element === 'רגיל' && prodType === ''){
                 setProdType('רגיל')
             }
-            if(element == 'רגיל' &&  prodType == 'רגיל'){
+            if(element === 'רגיל' &&  prodType === 'רגיל'){
                 setProdPrice(30)
                 setMealOrRegular(element)
             }
-            if(element == 'רגיל' &&  prodType == 'רגיל כפול' ){
+            if(element === 'רגיל' &&  prodType === 'רגיל כפול' ){
                 setProdPrice(45)
                 setMealOrRegular(element)
             }
-            if(element == 'רגיל' &&  prodType == 'גבינה כפול' ){
+            if(element === 'רגיל' &&  prodType === 'גבינה כפול' ){
                 setProdPrice(50)
                 setMealOrRegular(element)
             }
-            if(element == 'רגיל' &&  (prodType == 'גבינה' || prodType == 'צמחוני' || prodType == 'טבעוני')){
+            if(element === 'רגיל' &&  (prodType === 'גבינה' || prodType === 'צמחוני' || prodType === 'טבעוני')){
                 setProdPrice(35)
                 setMealOrRegular(element)
             }
-            if(element == 'ארוחה'){
+            if(element === 'ארוחה'){
                 setProdPrice(50)
                 setMealOrRegular(element)
                 setDry('לא')
@@ -87,26 +85,26 @@ export default function AddOrder(props) {
                 setExtraCheese('לא')
                 setExtraPayOnCheese(0)   
             }
-            if(element == 'ארוחה' &&  prodType == ''){
+            if(element === 'ארוחה' &&  prodType === ''){
                 setProdType('רגיל')
             }
-            if(element == 'ארוחה' &&  prodType == 'רגיל'){
+            if(element === 'ארוחה' &&  prodType === 'רגיל'){
                 setProdPrice(50)
                 setMealOrRegular(element)
             }
-            if(element == 'ארוחה' &&  (prodType == 'גבינה' || prodType == 'צמחוני' || prodType == 'טבעוני')){
+            if(element === 'ארוחה' &&  (prodType === 'גבינה' || prodType === 'צמחוני' || prodType === 'טבעוני')){
                 setProdPrice(55)
                 setMealOrRegular(element)
             }
-            if(element == 'ארוחה' &&  prodType == 'גבינה כפול' ){
+            if(element === 'ארוחה' &&  prodType === 'גבינה כפול' ){
                 setProdPrice(70)
                 setMealOrRegular(element)
             }
-            if(element == 'ארוחה' &&  prodType == 'רגיל כפול' ){
+            if(element === 'ארוחה' &&  prodType === 'רגיל כפול' ){
                 setProdPrice(65)
                 setMealOrRegular(element)
             }
-            if(element == "צ'יפס"){
+            if(element === "צ'יפס"){
                 setProdPrice(15)
                 setMealOrRegular(element)
                 setProdType('')
@@ -122,7 +120,7 @@ export default function AddOrder(props) {
                 setExtraCheese('לא')
                 setExtraPayOnCheese(0)              
             }
-            if(element == 'שתיה'){
+            if(element === 'שתיה'){
                 setProdPrice(10)
                 setMealOrRegular(element)
                 setProdType('')
@@ -143,7 +141,7 @@ export default function AddOrder(props) {
     
     const valueOfProd = (element) =>{
 
-         if(element == 'רגיל' &&  mealOrRegular == 'רגיל'){
+         if(element === 'רגיל' &&  mealOrRegular === 'רגיל'){
              setProdPrice(30)
              setProdType(element)
              setDry('לא')
@@ -156,7 +154,7 @@ export default function AddOrder(props) {
              setKetchup('לא')
              setMayonnaise('לא')
          }
-         if(element == 'רגיל כפול' &&  mealOrRegular == 'רגיל'){
+         if(element === 'רגיל כפול' &&  mealOrRegular === 'רגיל'){
              setProdPrice(45)
              setProdType(element)
              setDry('לא')
@@ -169,7 +167,7 @@ export default function AddOrder(props) {
              setKetchup('לא')
              setMayonnaise('לא')
          }
-         if(element == 'רגיל' &&  mealOrRegular == 'ארוחה'){
+         if(element === 'רגיל' &&  mealOrRegular === 'ארוחה'){
              setProdPrice(50)
              setProdType(element)
              setDry('לא')
@@ -182,7 +180,7 @@ export default function AddOrder(props) {
              setKetchup('לא')
              setMayonnaise('לא')
          }
-         if(element == 'רגיל כפול' &&  mealOrRegular == 'ארוחה'){
+         if(element === 'רגיל כפול' &&  mealOrRegular === 'ארוחה'){
              setProdPrice(65)
              setProdType(element)
              setDry('לא')
@@ -195,7 +193,7 @@ export default function AddOrder(props) {
              setKetchup('לא')
              setMayonnaise('לא')
          }
-         if(element == 'גבינה' &&  mealOrRegular == 'רגיל'){
+         if(element === 'גבינה' &&  mealOrRegular === 'רגיל'){
              setProdPrice(35)
              setProdType(element)
              setDry('לא')
@@ -208,7 +206,7 @@ export default function AddOrder(props) {
              setKetchup('לא')
              setMayonnaise('לא')
          }
-         if(element == 'גבינה כפול' &&  mealOrRegular == 'רגיל'){
+         if(element === 'גבינה כפול' &&  mealOrRegular === 'רגיל'){
              setProdPrice(50)
              setProdType(element)
              setDry('לא')
@@ -221,7 +219,7 @@ export default function AddOrder(props) {
              setKetchup('לא')
              setMayonnaise('לא')
          }
-         if(element == 'גבינה' &&  mealOrRegular == 'ארוחה'){
+         if(element === 'גבינה' &&  mealOrRegular === 'ארוחה'){
              setProdPrice(55)
              setProdType(element)
              setDry('לא')
@@ -234,7 +232,7 @@ export default function AddOrder(props) {
              setKetchup('לא')
              setMayonnaise('לא')
          }
-         if(element == 'גבינה כפול' &&  mealOrRegular == 'ארוחה'){
+         if(element === 'גבינה כפול' &&  mealOrRegular === 'ארוחה'){
              setProdPrice(70)
              setProdType(element)
              setDry('לא')
@@ -247,7 +245,7 @@ export default function AddOrder(props) {
              setKetchup('לא')
              setMayonnaise('לא')
          }
-         if(element == 'צמחוני' &&  mealOrRegular == 'רגיל'){
+         if(element === 'צמחוני' &&  mealOrRegular === 'רגיל'){
              setProdPrice(35)
              setProdType(element)
              setDry('לא')
@@ -261,7 +259,7 @@ export default function AddOrder(props) {
              setKetchup('לא')
              setMayonnaise('לא')
          }
-         if(element == 'צמחוני' &&  mealOrRegular == 'ארוחה'){
+         if(element === 'צמחוני' &&  mealOrRegular === 'ארוחה'){
              setProdPrice(55)
              setProdType(element)
              setDry('לא')
@@ -275,7 +273,7 @@ export default function AddOrder(props) {
              setKetchup('לא')
              setMayonnaise('לא')
          }
-         if(element == 'טבעוני' &&  mealOrRegular == 'רגיל'){
+         if(element === 'טבעוני' &&  mealOrRegular === 'רגיל'){
              setProdPrice(35)
              setProdType(element)
              setDry('לא')
@@ -289,7 +287,7 @@ export default function AddOrder(props) {
              setKetchup('כן')
              setMayonnaise('לא')
          }
-         if(element == 'טבעוני' &&  mealOrRegular == 'ארוחה'){
+         if(element === 'טבעוני' &&  mealOrRegular === 'ארוחה'){
              setProdPrice(55)
              setProdType(element)
              setDry('לא')
@@ -306,7 +304,7 @@ export default function AddOrder(props) {
     }
 
     const valueOfDry = (element) =>{
-        if(element == 'כן'){
+        if(element === 'כן'){
             setDry(element)
             setElefHaihimSouce('לא')
             setLettuce('לא')
@@ -317,7 +315,7 @@ export default function AddOrder(props) {
             setKetchup('לא')
             setMayonnaise('לא') 
         }    
-        if(element == 'לא'){
+        if(element === 'לא'){
             setDry(element)
             setElefHaihimSouce('כן')
             setLettuce('כן')
@@ -332,11 +330,11 @@ export default function AddOrder(props) {
 
 
     const valueOfExtraCheese = (element) =>{
-        if(element == 'כן'){
+        if(element === 'כן'){
             setExtraCheese(element)
             setExtraPayOnCheese(5)
         }
-        if(element == 'לא'){
+        if(element === 'לא'){
             setExtraCheese(element)
             setExtraPayOnCheese(0)
         }

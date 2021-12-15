@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
-import {Link} from 'react-router-dom';
 
 
 export default function EditUser(props) {
 
-    const [newFreindNumber, setNewFreindNumber] = useState(props.user.freindNumber);
+    const newFreindNumber = props.user.freindNumber;
     const [newFirstName, setNewFirstName] = useState(props.user.firstName);
     const [newLastName, setNewLastName] = useState(props.user.lastName);
     const [newPhoneNumb, setnewPhoneNumb] = useState(props.user.phoneNumb);
@@ -48,7 +47,7 @@ export default function EditUser(props) {
               e.preventDefault();
               return;
             }
-            if (newPhoneNumb.length != 10) {
+            if (newPhoneNumb.length !== 10) {
               alert("מספר הטלפון לא אפשרי(חייב להיות בעל 10 ספרות)");
               e.preventDefault();
               return;
@@ -64,7 +63,7 @@ export default function EditUser(props) {
               return;
             }
             else{
-              let newUsers = props.users.filter( e => e.freindNumber != props.user.freindNumber)
+              let newUsers = props.users.filter( e => e.freindNumber !== props.user.freindNumber)
           
               props.setUser( tempUser )
               newUsers.unshift(tempUser)

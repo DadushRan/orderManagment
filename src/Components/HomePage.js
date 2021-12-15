@@ -11,27 +11,27 @@ export default function HomePage(props) {
         const [loginPass, setLoginPass] = useState('');
         
         const getUserLogIn = (e, loginFreindNumb, loginPass) => { // פונקציה מהלוגאין שבודקת עם משתמש קיים ומביאה אותו
-            let myUser = props.users.filter (currUser => currUser.freindNumber == loginFreindNumb)
+            let myUser = props.users.filter (currUser => currUser.freindNumber === loginFreindNumb)
         
-            if (loginFreindNumb == 'ADMIN' && loginPass == 'ADMIN'){
+            if (loginFreindNumb === 'ADMIN' && loginPass === 'ADMIN'){
                 return '/Admin'
               }
-            if (loginFreindNumb == 'WORKER' && loginPass == 'WORKER'){
+            if (loginFreindNumb === 'WORKER' && loginPass === 'WORKER'){
                 return '/Worker'
               }
             
-            if (loginFreindNumb.length==0) {
+            if (loginFreindNumb.length === 0) {
               alert ("מלא את מספר-החבר שלך בבקשה");
               e.preventDefault ()
               return;
             }
-            if (myUser.length==0) {
+            if (myUser.length === 0) {
               alert ("מספר-חבר לא קיים אצלנו, נסה/י שוב או הרשם/מי במידה ועוד לא נרשמת ");
               e.preventDefault ()
               return;
             }
             myUser = myUser[0];                                  // מקדם את היוזר למקום ה-0 במערך היוזרים                           
-            if (myUser.pass != loginPass) {
+            if (myUser.pass !== loginPass) {
               alert ("סיסמה לא נכונה, אולי הטלפון שלך? במידה ולא גש בבקשה למנהל לקבלת עזרה");
               e.preventDefault ()
               return;
@@ -40,8 +40,8 @@ export default function HomePage(props) {
            }
 
            const link = () => {
-               if (loginFreindNumb == "ADMIN" && loginPass == "ADMIN") {return "Admin"}
-               if (loginFreindNumb == "WORKER" && loginPass == "WORKER") {return "Worker"}
+               if (loginFreindNumb === "ADMIN" && loginPass === "ADMIN") {return "Admin"}
+               if (loginFreindNumb === "WORKER" && loginPass === "WORKER") {return "Worker"}
             else return "User"
            }
 
@@ -94,18 +94,18 @@ export default function HomePage(props) {
 
             const getGuestLogIn = (e, guestFirstName, guestLastName, guestphoneNumb) => { // פונקציה מהלוגאין שמעבירה לאורח
                 
-              if ((guestFirstName.length && guestLastName.length && guestphoneNumb.length)==0) {
+              if ((guestFirstName.length && guestLastName.length && guestphoneNumb.length)===0) {
                 alert ("מלא בבקשה את כל השדות");
                 e.preventDefault ()
                 return;
               }
-              if (guestphoneNumb.length != 10) {
+              if (guestphoneNumb.length !== 10) {
                 alert ("טלפון חייב להיות בעל 10 מספרים");
                 e.preventDefault ()
                 return;
               }
               
-              let myUser = props.users.filter (currUser => currUser.freindNumber == 'Guest')    // מביא את אורח
+              let myUser = props.users.filter (currUser => currUser.freindNumber === 'Guest')    // מביא את אורח
                 myUser = myUser[0];           // מקדם את היוזר למקום ה-0 במערך היוזרים  
                 myUser.firstName = guestFirstName
                 myUser.lastName = guestLastName

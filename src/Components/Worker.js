@@ -1,8 +1,4 @@
 import React, { useState } from 'react'
-import {Link} from 'react-router-dom';
-
-
-
 
 export default function Worker(props) {
   
@@ -42,7 +38,7 @@ const CardDetails = (e,id, handleSelect, selected) => {
 
 
     const yesOrNoExtraCheeseBox = (element) =>{
-        if(element == 'כן'){
+        if(element === 'כן'){
           return ('** תוספת-גבינה **')
         }
         else{

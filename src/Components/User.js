@@ -60,12 +60,12 @@ export default function User(props) {
 
   const OrderConfirm = (orders, freindNumber, phoneNumb, e) =>{  
 
-    if(props.user.orders == ''){
+    if(props.user.orders === ''){
       alert('העגלה שלך ריקה אנא בחר לפני מוצר ב-"הוסף הזמנה +" שנמצא למעלה.')
       e.preventDefault ()
       return
     }
-    if(props.user.freindNumber == 'Guest') (                             // אם זה קניה במזומן אז התרע לגשת לקופה לתשלום, 0 = אורח
+    if(props.user.freindNumber === 'Guest') (                             // אם זה קניה במזומן אז התרע לגשת לקופה לתשלום, 0 = אורח
       alert('גש לקופה לתשלום')
     )
     const orderNumber = props.allHistoryOders.length+1   // מביא את אורח ההזמנות ומפרש למספר ההזמנה של הלקוחת זמני עד שיהיה דאטה בייס ואז זה יגיע משם  
@@ -76,7 +76,7 @@ export default function User(props) {
     props.setUser(props.user)
     const newUsers = props.users.filter((e, index)=>(e.freindNumber !== props.user.freindNumber))
     
-    if(props.user.freindNumber == 'Guest'){
+    if(props.user.freindNumber === 'Guest'){
       props.user.firstName = 'אורח'
       props.user.lastName  ='Guest'
     }
@@ -100,7 +100,7 @@ export default function User(props) {
   const fullName = props.user.firstName + '-' + props.user.lastName;
 
   const yesOrNoExtraCheeseBox = (element) =>{
-    if(element == 'כן'){
+    if(element === 'כן'){
       return ('** תוספת-גבינה **')
     }
     else{

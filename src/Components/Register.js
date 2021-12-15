@@ -10,7 +10,7 @@ export default function Register(props) {
     const [phoneNumb, setPhoneNumb] = useState('');
     const [pass, setPass] = useState('');
 
-    const myUserFreindNumber = props.users.filter (currUser => currUser.freindNumber == freindNumber)
+    const myUserFreindNumber = props.users.filter (currUser => currUser.freindNumber === freindNumber)
     
     const confirmVal = (e) => {
       
@@ -24,7 +24,7 @@ export default function Register(props) {
         e.preventDefault();
         return;
       }
-      if (myUserFreindNumber.length == 1) {
+      if (myUserFreindNumber.length === 1) {
         alert("מספר חבר קיים כבר במערכת");
         e.preventDefault();
         return;

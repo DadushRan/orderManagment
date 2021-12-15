@@ -80,7 +80,7 @@ const addUser = (firstName, lastName, freindNumber,phoneNumb, pass) => { // פו
 
 const addNewOrder = (userOrder) => { // פונקציית הוספת הזמנה למשתמש נוכחי
       user.orders.unshift(userOrder);
-      let newUsers = users.filter((element, index)=>(element.freindNumber != user.freindNumber))
+      let newUsers = users.filter((element, index)=>(element.freindNumber !== user.freindNumber))
       setUsers([user,...newUsers])
     }
 
