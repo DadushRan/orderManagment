@@ -18,8 +18,8 @@ export default function User(props) {
   const [showEditUser, setShowEditUser] = useState(false);
 
     const showEditUserForm = (state) => {
-      setShowEditUser (state) ,
-      setShowAddOrder (false) ,
+      setShowEditUser (state) 
+      setShowAddOrder (false) 
       setShowOrderHistory(false)
     }
 
