@@ -125,7 +125,7 @@ export default function User(props) {
   return (
         <div style={{marginTop:'5px'}}>
 
-          <div style={{boxSizing:'-moz-initial', color:'#FFFFFF',backgroundColor:'#1771E6', width:'200px',height:'100px', marginRight:'auto',marginLeft:'auto', border:'1.5px solid black', borderRadius:'5px', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2),0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}>
+          <div style={{boxSizing:'-moz-initial', color:'#FFFFFF',backgroundColor:'#1771E6', width:'200px', marginRight:'auto',marginLeft:'auto', border:'1.5px solid black', borderRadius:'5px', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2),0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}>
          <button onClick={()=>showEditUserForm(!showEditUser)} style={{float:'left', marginLeft:'7px', marginTop:'7px', border:'1.5px solid black', borderRadius:'5px', fontSize:'10px', cursor:'pointer'}}>ערוך</button>
          <button onClick={()=>showOrderHistoryBlock(!showOrderHistory)} style={{float:'right', marginRight:'7px', marginTop:'7px', border:'1.5px solid black', borderRadius:'5px', fontSize:'10px', cursor:'pointer'}}>היסטוריה</button>
 
