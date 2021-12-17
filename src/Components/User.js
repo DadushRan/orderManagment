@@ -60,7 +60,7 @@ export default function User(props) {
 
   const OrderConfirm = (orders, freindNumber, phoneNumb, e) =>{  
 
-    if(props.user.orders === ''){
+    if(props.user.orders == ''){
       alert('העגלה שלך ריקה אנא בחר לפני מוצר ב-"הוסף הזמנה +" שנמצא למעלה.')
       e.preventDefault ()
       return
